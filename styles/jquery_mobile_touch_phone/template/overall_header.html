@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<head>
+<meta charset="utf-8">
+{META}
+<!-- IF M_MODE ne 'option' -->
+<title>{PAGE_TITLE}</title>
+<!-- ELSE -->
+<title>{L_OPTIONS}</title>
+<!-- ENDIF -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+<link rel="stylesheet" href="./mobile/themes/jquery/mobile/1.3.2/jquery.mobile-1.3.2.rtl.min.css" />
+<!-- ELSE -->
+<link rel="stylesheet" href="./mobile/themes/jquery/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<!-- ENDIF -->
+<script src="./mobile/themes/jquery/jquery-1.9.1.min.js"></script>
+<script src="./mobile/themes/jquery/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<style type="text/css">
+img { max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; border: 0px solid black; }
+</style>
+</head>
+<body>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+<!-- IF M_MODE ne 'option' -->
+<a href="{U_OPTIONS}" data-rel="dialog" data-icon="bars" data-transition="pop">{L_OPTIONS}</a>
+<h1>{PAGE_TITLE}</h1>
+<!-- ELSE -->
+<h1>{L_OPTIONS}</h1>
+<!-- ENDIF -->
+</div>
+<div data-role="content">
+<ul data-role="listview">
+<!-- IF M_MODE ne 'option' -->
+<!-- INCLUDE personal_header.html -->
+<!-- INCLUDE navbar_header.html -->
+<!-- ENDIF -->

@@ -1,0 +1,25 @@
+<!-- IF not S_PRIVMSGS and S_DISPLAY_USERNAME -->
+<label for="username">{L_USERNAME}{L_COLON}</label>
+<br />
+<input type="text" name="username" id="username" size="25" value="{USERNAME}" placeholder="{L_USERNAME}" />
+<br />
+<!-- ENDIF -->
+<!-- IF S_POST_ACTION or S_PRIVMSGS or S_EDIT_DRAFT -->
+<label for="subject">{L_SUBJECT}{L_COLON}</label>
+<br />
+<input type="text" name="subject" id="subject" size="45" maxlength="<!-- IF S_NEW_MESSAGE -->120<!-- ELSE -->124<!-- ENDIF -->" value="{SUBJECT}" placeholder="{L_SUBJECT}" />
+<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
+<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
+<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+<!-- ENDIF -->
+<!-- ENDIF -->
+<br />
+<textarea <!-- IF S_UCP_ACTION and not S_PRIVMSGS and not S_EDIT_DRAFT -->name="signature" id="signature"<!-- ELSE -->name="message" id="message"<!-- ENDIF --> rows="15" cols="76">{MESSAGE}</textarea>
+<!-- IF $EXTRA_POSTING_OPTIONS eq 1 -->
+<!-- IF not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
+<br />
+<input type="submit" name="post" value="{L_SUBMIT}" />
+{S_HIDDEN_ADDRESS_FIELD}
+{S_HIDDEN_FIELDS}
+<!-- ENDIF -->
+<!-- ENDIF -->

@@ -1,0 +1,15 @@
+<br />
+<label for="confirm_code">{L_CONFIRM_CODE}{L_COLON}</label>
+<br />
+<img src="{CONFIRM_IMAGE_LINK}" alt="{L_CONFIRM_CODE}" />
+<!-- IF S_CONFIRM_REFRESH -->
+<br />
+<label for="confirm_code"></label>
+<br />
+<input type="submit" name="refresh_vc" id="refresh_vc" value="{L_VC_REFRESH}" />
+<!-- ENDIF -->
+<br />
+<label for="confirm_code">{L_CONFIRM_CODE_EXPLAIN}</label>
+<br />
+<input type="text" name="confirm_code" id="confirm_code" size="8" maxlength="8" placeholder="{L_CONFIRM_CODE}" />
+<input type="hidden" name="confirm_id" id="confirm_id" value="{CONFIRM_ID}" />

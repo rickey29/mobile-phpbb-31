@@ -1,0 +1,45 @@
+<!-- INCLUDE overall_header.html -->
+<!-- IF LOGIN_EXPLAIN -->
+<li data-role="list-divider">{LOGIN_EXPLAIN}</li>
+<!-- ELSE -->
+<li data-role="list-divider">{L_LOGIN}</li>
+<!-- ENDIF -->
+<!-- IF LOGIN_ERROR -->
+<li data-theme="e">{LOGIN_ERROR}</li>
+<!-- ENDIF -->
+<li>
+<form action="{S_LOGIN_ACTION}" method="post" id="login">
+<div data-role="fieldcontain">
+<label for="{USERNAME_CREDENTIAL}">{L_USERNAME}{L_COLON}</label>
+<input type="text" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" placeholder="{L_USERNAME}" />
+</div>
+<div data-role="fieldcontain">
+<label for="{PASSWORD_CREDENTIAL}">{L_PASSWORD}{L_COLON}</label>
+<input type="password" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25" placeholder="{L_PASSWORD}" />
+</div>
+<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
+<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
+<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+<!-- ENDIF -->
+<!-- IF S_DISPLAY_FULL_LOGIN -->
+<div data-role="fieldcontain">
+<fieldset data-role="controlgroup">
+<legend></legend>
+<!-- IF S_AUTOLOGIN_ENABLED -->
+<label for="autologin">{L_LOG_ME_IN}</label>
+<input type="checkbox" name="autologin" id="autologin" />
+<!-- ENDIF -->
+<label for="viewonline">{L_HIDE_ME}</label>
+<input type="checkbox" name="viewonline" id="viewonline" />
+</fieldset>
+</div>
+<!-- ENDIF -->
+<fieldset data-role="controlgroup">
+<input type="submit" name="login" value="{L_LOGIN}" data-theme="a" />
+</fieldset>
+{S_LOGIN_REDIRECT}
+{S_HIDDEN_FIELDS}
+</form>
+</li>
+</ul>
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,37 @@
+<!-- INCLUDE overall_header.html -->
+<!-- IF S_SHOW_COPPA or S_REGISTRATION -->
+</div>
+<hr />
+<div>
+{L_REGISTRATION}
+<br />
+<!-- IF S_SHOW_COPPA -->
+{L_COPPA_BIRTHDAY}
+<!-- ELSE -->
+{L_TERMS_OF_USE}
+<!-- ENDIF -->
+<!-- IF S_SHOW_COPPA -->
+<br />
+<a href="{U_COPPA_NO}">{L_COPPA_NO}</a>
+<br />
+<a href="{U_COPPA_YES}">{L_COPPA_YES}</a>
+<!-- ELSE -->
+<form method="post" action="{S_UCP_ACTION}" id="agreement">
+<input type="submit" name="agreed" id="agreed" value="{L_AGREE}" />
+&nbsp;
+<input type="submit" name="not_agreed" value="{L_NOT_AGREE}" />
+{S_HIDDEN_FIELDS}
+{S_FORM_TOKEN}
+</form>
+<!-- ENDIF -->
+<!-- ELSEIF S_AGREEMENT -->
+</div>
+<hr />
+<div>
+{AGREEMENT_TITLE}
+<br />
+{AGREEMENT_TEXT}
+<br />
+<a href="{U_BACK}">{L_BACK}</a>
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

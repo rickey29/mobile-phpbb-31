@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<head>
+<meta charset="utf-8">
+{META}
+<title>{PAGE_TITLE}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+<link rel="stylesheet" href="./mobile/themes/jquery/mobile/1.3.2/jquery.mobile-1.3.2.rtl.min.css" />
+<!-- ELSE -->
+<link rel="stylesheet" href="./mobile/themes/jquery/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+<!-- ENDIF -->
+<script src="./mobile/themes/jquery/jquery-1.9.1.min.js"></script>
+<script src="./mobile/themes/jquery/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<style type="text/css">
+img { max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; border: 0px solid black; }
+</style>
+</head>
+<body>
+<div data-role="page">
+<!-- INCLUDE panel_body.html -->
+<div data-role="header" data-position="fixed">
+<a href="#m-panel" data-icon="bars" data-shadow="false" data-iconshadow="false">{L_OPTIONS}</a>
+<h1>{PAGE_TITLE}</h1>
+</div>
+<div data-role="content">
+<ul data-role="listview">
+<!-- INCLUDE personal_header.html -->
+<!-- INCLUDE navbar_header.html -->

@@ -1,0 +1,30 @@
+<!-- INCLUDE overall_header.html -->
+</div>
+<hr />
+<div>
+<!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF -->
+<!-- IF S_SHOW_TOPICS -->
+<!-- IF .searchresults -->
+<!-- BEGIN searchresults -->
+<br />
+<a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a>
+<br />
+{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR} &raquo; {searchresults.FIRST_POST_TIME} &raquo; {L_IN} {searchresults.FORUM_TITLE}
+&nbsp;
+<!-- IF not S_IS_BOT -->
+( <a href="{searchresults.U_LAST_POST}">{searchresults.TOPIC_REPLIES} &#47; {searchresults.TOPIC_VIEWS}</a> )
+<!-- ENDIF -->
+<!-- END searchresults -->
+<!-- ELSE -->
+<br />
+{L_NO_SEARCH_RESULTS}
+<!-- ENDIF -->
+<!-- ELSE -->
+<!-- ENDIF -->
+<!-- IF .pagination or .searchresults or PAGE_NUMBER -->
+<!-- IF .pagination --> 
+<!-- INCLUDE pagination.html -->
+<!-- ELSE -->
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

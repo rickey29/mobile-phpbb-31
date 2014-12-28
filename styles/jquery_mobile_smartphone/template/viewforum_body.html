@@ -1,0 +1,69 @@
+<!-- INCLUDE overall_header.html -->
+<!-- IF S_HAS_SUBFORUM -->
+<!-- INCLUDE forumlist_body.html -->
+<!-- ENDIF -->
+</div>
+<hr />
+<div>
+<!-- IF S_DISPLAY_POST_INFO or .pagination or TOTAL_POSTS or TOTAL_TOPICS -->
+<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
+<a href="{U_POST_NEW_TOPIC}"><!-- IF S_IS_LOCKED -->{L_BUTTON_FORUM_LOCKED}<!-- ELSE -->{L_BUTTON_NEW_TOPIC}<!-- ENDIF --></a>
+<br />
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF S_NO_READ_ACCESS -->
+<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+{L_LOGIN_LOGOUT}
+<br />
+<!-- ENDIF -->
+{L_NO_READ_ACCESS}
+<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+<form action="{S_LOGIN_ACTION}" method="post">
+<label for="username">{L_USERNAME}{L_COLON}</label>
+<br />
+<input type="text" name="username" id="username" size="25" value="{USERNAME}" placeholder="{L_USERNAME}" />
+<br />
+<label for="password">{L_PASSWORD}{L_COLON}</label>
+<br />
+<input type="password" id="password" name="password" size="25" placeholder="{L_PASSWORD}" />
+<!-- IF S_AUTOLOGIN_ENABLED -->
+<br />
+<label for="autologin">{L_LOG_ME_IN}{L_COLON}</label>
+<input type="checkbox" name="autologin" id="autologin" />
+<!-- ENDIF -->
+<br />
+<label for="viewonline">{L_HIDE_ME}{L_COLON}</label>
+<input type="checkbox" name="viewonline" id="viewonline" />
+<br />
+<input type="submit" name="login" value="{L_LOGIN}" />
+{S_LOGIN_REDIRECT}
+</form>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF S_IS_POSTABLE -->
+{FORUM_NAME}
+<!-- ENDIF -->
+<!-- BEGIN topicrow -->
+</div>
+<hr />
+<div>
+<a href="{topicrow.U_VIEW_TOPIC}">{topicrow.TOPIC_TITLE}</a>
+<br />
+{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR} &raquo; {topicrow.FIRST_POST_TIME}
+&nbsp;
+( <a href="{topicrow.U_LAST_POST}">{topicrow.REPLIES} &#47; {topicrow.VIEWS}</a> )
+<!-- BEGINELSE -->
+<!-- IF S_IS_POSTABLE -->
+</div>
+<hr />
+<div>
+{L_NO_TOPICS}
+<!-- ENDIF -->
+<!-- END topicrow -->
+<!-- IF .topicrow and not S_DISPLAY_ACTIVE -->
+<!-- IF .pagination -->
+<!-- INCLUDE pagination.html -->
+<!-- ELSE -->
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

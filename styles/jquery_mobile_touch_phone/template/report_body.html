@@ -1,0 +1,46 @@
+<!-- INCLUDE overall_header.html -->
+<li data-role="list-divider"><!-- IF S_REPORT_POST -->{L_REPORT_POST}<!-- ELSE -->{L_REPORT_MESSAGE}<!-- ENDIF --></li>
+<li>
+<div>
+<!-- IF S_REPORT_POST -->{L_REPORT_POST_EXPLAIN}<!-- ELSE -->{L_REPORT_MESSAGE_EXPLAIN}<!-- ENDIF -->
+</div>
+</li>
+<!-- IF ERROR -->
+<li data-theme="e">{ERROR}</li>
+<!-- ENDIF -->
+<li>
+<form method="post" action="{S_REPORT_ACTION}" id="report">
+<div data-role="fieldcontain">
+<label for="reason_id">{L_REASON}{L_COLON}</label>
+<select name="reason_id" id="reason_id" data-native-menu="false">
+<!-- BEGIN reason -->
+<option value="{reason.ID}"<!-- IF reason.S_SELECTED --> selected="selected"<!-- ENDIF -->>{reason.DESCRIPTION}</option>
+<!-- END reason -->
+</select>
+</div>
+<!-- IF S_CAN_NOTIFY -->
+<div data-role="fieldcontain">
+<fieldset data-role="controlgroup">
+<legend>{L_REPORT_NOTIFY}{L_COLON}<br />{L_REPORT_NOTIFY_EXPLAIN}</legend>
+<input type="radio" name="notify" id="notify1" value="1" <!-- IF not S_NOTIFY -->checked="checked"<!-- ENDIF --> />
+<label for="notify1">{L_YES}</label>
+<input type="radio" name="notify" id="notify0" value="0" <!-- IF S_NOTIFY -->checked="checked"<!-- ENDIF --> />
+<label for="notify0">{L_NO}</label>
+</fieldset>
+</div>
+<!-- ENDIF -->
+<div data-role="fieldcontain">
+<label for="report_text">{L_MORE_INFO}{L_COLON}<br />{L_CAN_LEAVE_BLANK}</label>
+<textarea name="report_text" id="report_text" rows="10" cols="76">{REPORT_TEXT}</textarea>
+</div>
+<!-- IF CAPTCHA_TEMPLATE -->
+<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+<!-- ENDIF -->
+<fieldset data-role="controlgroup">
+<input type="submit" name="submit" value="{L_SUBMIT}" data-theme="a" />
+<input type="submit" name="cancel" value="{L_CANCEL}" data-theme="a" />
+</fieldset>
+{S_FORM_TOKEN}
+</form>
+</li>
+<!-- INCLUDE overall_footer.html -->

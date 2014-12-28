@@ -1,0 +1,63 @@
+<!-- IF not S_SHOW_DRAFTS -->
+<!-- IF S_ALLOW_MASS_PM -->
+<!-- IF not S_EDIT_POST -->
+<label for="username_list">{L_TO_ADD_MASS}{L_COLON}</label>
+<br />
+<input type="text" id="username_list" name="username_list" size="50" value="" />
+<input type="submit" name="add_to" value="{L_ADD}" />
+<input type="submit" name="add_bcc" value="{L_ADD_BCC}" />
+<br />
+<!-- ENDIF -->
+<!-- IF .to_recipient -->
+<label for="username_list">{L_TO_MASS}{L_COLON}</label>
+<br />
+<!-- BEGIN to_recipient -->
+<!-- IF to_recipient.IS_GROUP -->
+{to_recipient.NAME}
+<!-- ELSE -->
+{to_recipient.NAME}
+<!-- ENDIF -->
+<!-- IF not S_EDIT_POST -->
+<input type="submit" name="remove_{to_recipient.TYPE}[{to_recipient.UG_ID}]" value="x" />
+<!-- ENDIF -->
+<br />
+<!-- END to_recipient -->
+<!-- ENDIF -->
+<!-- IF .bcc_recipient -->
+<label for="username_list">{L_BCC}{L_COLON}</label>
+<br />
+<!-- BEGIN bcc_recipient -->
+<!-- IF bcc_recipient.IS_GROUP -->
+{bcc_recipient.NAME}
+<!-- ELSE -->
+{bcc_recipient.NAME}
+<!-- ENDIF -->
+<!-- IF not S_EDIT_POST -->
+<input type="submit" name="remove_{bcc_recipient.TYPE}[{bcc_recipient.UG_ID}]" value="x" />
+<!-- ENDIF -->
+<br />
+<!-- END bcc_recipient -->
+<!-- ENDIF -->
+<!-- ELSE -->
+<!-- IF not S_EDIT_POST -->
+<label for="username_list">{L_TO_ADD}{L_COLON}</label>
+<br />
+<input type="text" name="username_list" id="username_list" size="20" value="" />
+<input type="submit" name="add_to" value="{L_ADD}" />
+<br />
+<!-- ENDIF -->
+<!-- IF .to_recipient -->
+<!-- BEGIN to_recipient -->
+<!-- IF to_recipient.IS_GROUP -->
+{to_recipient.NAME}
+<!-- ELSE -->
+{to_recipient.NAME}
+<!-- ENDIF -->
+<!-- IF not S_EDIT_POST -->
+<input type="submit" name="remove_{to_recipient.TYPE}[{to_recipient.UG_ID}]" value="x" />
+<!-- ENDIF -->
+<br />
+<!-- END to_recipient -->
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- ENDIF -->

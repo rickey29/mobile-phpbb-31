@@ -1,0 +1,26 @@
+{
+   "name": "rickey29/mphpbb31",
+   "type": "phpbb-extension",
+   "description": "Mobile phpBB 3.1 (MphpBB31) is a mobile-friendly phpBB 3.1 theme.  It only provides essential mobile related functions, it does not support all phpBB 3.1 features.",
+   "homepage": "http://flexplat.com/?q=mobile-phpbb-31",
+   "version": "1.0.0",
+   "time": "2014-12-28",
+   "license": "GPL-2.0",
+   "authors": [
+      {
+         "name": "Rickey Gu",
+         "email": "rickey29@gmail.com",
+         "homepage": "http://flexplat.com",
+         "role": "Developer"
+      }
+   ],
+   "require": {
+      "php": ">=5.3.3"
+   },
+   "extra": {
+      "display-name": "Mobile phpBB 3.1",
+      "soft-require": {
+         "phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+      }
+   }
+}

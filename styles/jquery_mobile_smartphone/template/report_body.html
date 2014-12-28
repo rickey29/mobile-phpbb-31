@@ -1,0 +1,43 @@
+<!-- INCLUDE overall_header.html -->
+</div>
+<hr />
+<div>
+<!-- IF S_REPORT_POST -->{L_REPORT_POST}<!-- ELSE -->{L_REPORT_MESSAGE}<!-- ENDIF -->
+<br />
+<!-- IF S_REPORT_POST -->{L_REPORT_POST_EXPLAIN}<!-- ELSE -->{L_REPORT_MESSAGE_EXPLAIN}<!-- ENDIF -->
+<!-- IF ERROR -->
+<br />
+{ERROR}
+<!-- ENDIF -->
+<form method="post" action="{S_REPORT_ACTION}" id="report">
+<label for="reason_id">{L_REASON}{L_COLON}</label>
+<br />
+<select name="reason_id" id="reason_id">
+<!-- BEGIN reason -->
+<option value="{reason.ID}"<!-- IF reason.S_SELECTED --> selected="selected"<!-- ENDIF -->>{reason.DESCRIPTION}</option>
+<!-- END reason -->
+</select>
+<!-- IF S_CAN_NOTIFY -->
+<br />
+{L_REPORT_NOTIFY}{L_COLON}<br />{L_REPORT_NOTIFY_EXPLAIN}
+<br />
+<input type="radio" name="notify" id="notify1" value="1" <!-- IF not S_NOTIFY -->checked="checked"<!-- ENDIF --> />
+<label for="notify1">{L_YES}</label>
+&nbsp;
+<input type="radio" name="notify" id="notify0" value="0" <!-- IF S_NOTIFY -->checked="checked"<!-- ENDIF --> />
+<label for="notify0">{L_NO}</label>
+<!-- ENDIF -->
+<br />
+<label for="report_text">{L_MORE_INFO}{L_COLON}<br />{L_CAN_LEAVE_BLANK}</label>
+<br />
+<textarea name="report_text" id="report_text" rows="10" cols="76">{REPORT_TEXT}</textarea>
+<!-- IF CAPTCHA_TEMPLATE -->
+<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+<!-- ENDIF -->
+<br />
+<input type="submit" name="submit" value="{L_SUBMIT}" />
+&nbsp;
+<input type="submit" name="cancel" value="{L_CANCEL}" />
+{S_FORM_TOKEN}
+</form>
+<!-- INCLUDE overall_footer.html -->

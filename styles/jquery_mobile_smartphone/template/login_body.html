@@ -1,0 +1,41 @@
+<!-- INCLUDE overall_header.html -->
+</div>
+<hr />
+<div>
+<!-- IF LOGIN_EXPLAIN -->
+{LOGIN_EXPLAIN}
+<!-- ELSE -->
+{L_LOGIN}
+<!-- ENDIF -->
+<!-- IF LOGIN_ERROR -->
+<br />
+{LOGIN_ERROR}
+<!-- ENDIF -->
+<form action="{S_LOGIN_ACTION}" method="post" id="login">
+<label for="{USERNAME_CREDENTIAL}">{L_USERNAME}{L_COLON}</label>
+<br />
+<input type="text" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" placeholder="{L_USERNAME}" />
+<br />
+<label for="{PASSWORD_CREDENTIAL}">{L_PASSWORD}{L_COLON}</label>
+<br />
+<input type="password" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25" placeholder="{L_PASSWORD}" />
+<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
+<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
+<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+<!-- ENDIF -->
+<!-- IF S_DISPLAY_FULL_LOGIN -->
+<!-- IF S_AUTOLOGIN_ENABLED -->
+<br />
+<label for="autologin">{L_LOG_ME_IN}{L_COLON}</label>
+<input type="checkbox" name="autologin" id="autologin" />
+<!-- ENDIF -->
+<br />
+<label for="viewonline">{L_HIDE_ME}{L_COLON}</label>
+<input type="checkbox" name="viewonline" id="viewonline" />
+<!-- ENDIF -->
+<br />
+<input type="submit" name="login" value="{L_LOGIN}" />
+{S_LOGIN_REDIRECT}
+{S_HIDDEN_FIELDS}
+</form>
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,10 @@
+<!-- INCLUDE overall_header.html -->
+<!-- IF S_PRIVMSGS -->
+</div>
+<hr />
+<div>
+<!-- BEGIN folder -->
+<a href="{folder.U_FOLDER}"><!-- IF folder.UNREAD_MESSAGES > 0 -->{folder.FOLDER_NAME} ( {folder.UNREAD_MESSAGES} )<!-- ELSE -->{folder.FOLDER_NAME}<!-- ENDIF --></a>
+&nbsp;
+<!-- END folder -->
+<!-- ENDIF -->

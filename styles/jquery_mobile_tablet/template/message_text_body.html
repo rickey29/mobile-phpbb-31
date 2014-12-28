@@ -1,0 +1,16 @@
+<li>
+{TEXT_HEADING}
+</li>
+<!-- IF .msg_text_row -->
+<li>
+<div>
+<!-- BEGIN msg_text_row -->
+<!-- IF msg_text_row.U_TEXT -->
+<a href={msg_text_row.U_TEXT} rel="external" data-role="button" data-theme="a">{msg_text_row.TEXT}</a>
+<!-- ELSE -->
+{msg_text_row.TEXT}
+<!-- ENDIF -->
+<!-- END msg_text_row -->
+</div>
+</li>
+<!-- ENDIF -->
