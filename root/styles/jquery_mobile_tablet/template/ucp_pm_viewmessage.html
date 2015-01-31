@@ -1,0 +1,75 @@
+<!-- INCLUDE ucp_header.html -->
+<!-- INCLUDE ucp_pm_message_header.html -->
+<li>
+<!-- IF U_DELETE or U_EDIT or U_QUOTE or U_REPORT -->
+<div>
+<!-- IF U_EDIT -->
+<a href="{U_EDIT}" rel="external" data-role="button" data-inline="true" data-theme="b">{L_POST_EDIT_PM}</a>
+<!-- ENDIF -->
+<!-- IF U_DELETE -->
+<a href="{U_DELETE}" rel="external" data-role="button" data-inline="true" data-theme="b">{L_DELETE_MESSAGE}</a>
+<!-- ENDIF -->
+<!-- IF U_REPORT -->
+<a href="{U_REPORT}" rel="external" data-role="button" data-inline="true" data-theme="b">{L_REPORT_PM}</a>
+<!-- ENDIF -->
+<!-- IF U_QUOTE -->
+<a href="{U_QUOTE}" rel="external" data-role="button" data-inline="true" data-theme="b">{L_POST_QUOTE_PM}</a>
+<!-- ENDIF -->
+</div>
+<!-- ENDIF -->
+<h3>{SUBJECT}</h3>
+<p>
+{L_SENT_AT}{L_COLON} {SENT_DATE}
+<br />
+{L_PM_FROM}{L_COLON} <a href="{U_MESSAGE_AUTHOR}" rel="external">{MESSAGE_AUTHOR}</a>
+<!-- IF S_TO_RECIPIENT -->
+<br />
+{L_TO}{L_COLON}
+<!-- BEGIN to_recipient -->
+&nbsp;
+<a href="{to_recipient.U_VIEW}" rel="external">{to_recipient.NAME}</a>
+<!-- END to_recipient -->
+<!-- ENDIF -->
+<!-- IF S_BCC_RECIPIENT -->
+<br />
+{L_BCC}{L_COLON}
+<!-- BEGIN bcc_recipient -->
+&nbsp;
+<a href="{bcc_recipient.U_VIEW}" rel="external">{bcc_recipient.NAME}</a>
+<!-- END bcc_recipient -->
+<!-- ENDIF -->
+</p>
+<div>
+{MESSAGE}
+</div>
+<!-- IF EDITED_MESSAGE or EDIT_REASON -->
+<p>
+<br />
+{EDITED_MESSAGE}
+<!-- IF EDIT_REASON -->
+<br />
+{L_REASON}{L_COLON} {EDIT_REASON}
+<!-- ENDIF -->
+</p>
+<!-- ENDIF -->
+</li>
+</ul>
+<!-- IF S_VIEW_MESSAGE -->
+</div>
+<div data-role="footer" data-id="foo1" data-position="fixed">
+<div data-role="navbar">
+<ul>
+<!-- IF U_PREVIOUS_PM -->
+<li>
+<a href="{U_PREVIOUS_PM}" rel="external" class="ui-btn-active">{L_VIEW_PREVIOUS_PM}</a>
+</li>
+<!-- ENDIF -->
+<!-- IF U_NEXT_PM -->
+<li>
+<a href="{U_NEXT_PM}" rel="external" class="ui-btn-active">{L_VIEW_NEXT_PM}</a>
+</li>
+<!-- ENDIF -->
+</ul>
+</div>
+<!-- ENDIF -->
+<!-- INCLUDE ucp_footer.html -->
