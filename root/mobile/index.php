@@ -2,7 +2,7 @@
 /*
 	project: Mobile phpBB 3.1 (MphpBB31)
 	file:    $phpbb_root_path/mobile/index.php
-	version: 1.1.0
+	version: 1.2.0
 	author:  Rickey Gu
 	web:     http://flexplat.com
 	email:   rickey29@gmail.com
@@ -25,21 +25,18 @@ if ( $style_id )
 }
 
 
-define('IN_MPHPBB31', true);
-
 // detection library
 require($phpbb_root_path . 'mobile/lib/detection.' . $phpEx);
 
 
 global $user, $request;
 
-
 $m_data = array();
 $m_data['user_agent'] = $request->server('HTTP_USER_AGENT');
 $m_data['accept'] = $request->server('HTTP_ACCEPT');
 $m_data['profile'] = $request->server('HTTP_PROFILE');
 $m_data['redirection'] = $request->variable('m-redirection', '');
-$m_data['cookie'] = $request->variable($config['cookie_name'] . '_m-redirection', '', true, \phpbb\request\request_interface::COOKIE);
+$m_data['cookie'] = $request->variable($config['cookie_name'] . '_m_redirection', '', true, \phpbb\request\request_interface::COOKIE);
 
 $m_value = m_get_redirection($m_data);
 
@@ -55,13 +52,13 @@ if ( !empty($m_response['set_cookie']) )
 {
 	if ( $m_response['set_cookie'] == 'mobile' )
 	{
-		// the cookie expires one year later: 60 * 60 * 24 * 365 = 31,536,000
-		$user->set_cookie('m-redirection', 'mobile', time() + 31536000);
+		// make the cookie expires in a years time: 60 * 60 * 24 * 365 = 31,536,000
+		$user->set_cookie('m_redirection', 'mobile', time() + 31536000);
 	}
 	else if ( $m_response['set_cookie'] == 'desktop' )
 	{
-		// the cookie expires one year later: 60 * 60 * 24 * 365 = 31,536,000
-		$user->set_cookie('m-redirection', 'desktop', time() + 31536000);
+		// make the cookie expires in a years time: 60 * 60 * 24 * 365 = 31,536,000
+		$user->set_cookie('m_redirection', 'desktop', time() + 31536000);
 	}
 }
 
@@ -88,10 +85,12 @@ if ( !empty($m_response['echo_page']) && $m_response['echo_page'] == 'mobile' )
 	$row = $db->sql_fetchrow($result);
 	$db->sql_freeresult($result);
 
-	$style_id = $row['style_id'];
+	if ( !empty($row) )
+	{
+		$style_id = $row['style_id'];
 
-
-	// library
-	include($phpbb_root_path . 'mobile/lib/lib.' . $phpEx);
+		// style library
+		include($phpbb_root_path . 'mobile/lib/style.' . $phpEx);
+	}
 }
 ?>

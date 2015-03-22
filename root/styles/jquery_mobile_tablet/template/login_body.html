@@ -41,5 +41,12 @@
 {S_HIDDEN_FIELDS}
 </form>
 </li>
+<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
+<!-- IF U_SEND_PASSWORD -->
+<li>
+<a href="{U_SEND_PASSWORD}" rel="external">{L_FORGOT_PASS}</a>
+</li>
+<!-- ENDIF -->
+<!-- ENDIF -->
 </ul>
 <!-- INCLUDE overall_footer.html -->

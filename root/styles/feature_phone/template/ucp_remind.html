@@ -1,0 +1,21 @@
+<!-- INCLUDE overall_header.html -->
+</div>
+<hr />
+<div>
+{L_SEND_PASSWORD}
+<form action="{S_PROFILE_ACTION}" method="post" id="remind">
+<label for="username">{L_USERNAME}{L_COLON}</label>
+<br />
+<input type="text" name="username" id="username" size="25" placeholder="{L_USERNAME}" />
+<br />
+<label for="email">{L_EMAIL_ADDRESS}{L_COLON}<br />{L_EMAIL_REMIND}</label>
+<br />
+<input type="email" name="email" id="email" size="25" maxlength="100" placeholder="{L_EMAIL_ADDRESS}" />
+<br />
+<input type="submit" name="submit" id="submit" value="{L_SUBMIT}" />
+&nbsp;
+<input type="reset" value="{L_RESET}" name="reset" />
+{S_HIDDEN_FIELDS}
+{S_FORM_TOKEN}
+</form>
+<!-- INCLUDE overall_footer.html -->

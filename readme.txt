@@ -1,7 +1,7 @@
 Mobile phpBB 3.1 Readme
 ################
-version: 1.1.0
-last update: Sat., Jan. 31, 2015
+version: 1.2.0
+last update: Sat., Mar. 21, 2015
 
 
 Description
@@ -25,7 +25,7 @@ None.
 
 Infrastructure
 ++++++++++++++++
-This version is developed based on phpBB version 3.1.0 to 3.1.2 .
+This version is developed based on phpBB version 3.1.0 to 3.1.3 .
 
 
 Installation
@@ -52,13 +52,18 @@ If you have other language(s) than English, please update your language file(s) 
 
 Frequent Ask Question
 ++++++++++++++++
-Please refer to my web site: "http://flexplat.com/?q=mphpbb31-faq" for detail discussion.
+Please refer to my web site: "http://flexplat.com/mphpbb31-faq" for detail discussion.
 
 Since my often have to update this section after I release the package, so I provide the questions and answers on my web site instead of here.
 
 
 History
 ++++++++++++++++
+version 1.2.0 (Sat., Mar. 21, 2015)
+-- new feature: support hash url
+-- new feature: provide "captcha_qa" template
+-- new feature: provide "ucp_remind" template
+
 version 1.1.0 (Sat., Jan. 31, 2015)
 -- improvement: rework based on phpBB team's comments
 

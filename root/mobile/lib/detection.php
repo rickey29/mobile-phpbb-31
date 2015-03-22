@@ -2,18 +2,13 @@
 /*
 	project: Mobile phpBB 3.1 (MphpBB31)
 	file:    $phpbb_root_path/mobile/lib/detection.php
-	version: 1.1.0
+	version: 1.2.0
 	author:  Rickey Gu
 	web:     http://flexplat.com
 	email:   rickey29@gmail.com
 */
 
 if ( !defined('IN_PHPBB') )
-{
-	exit;
-}
-
-if ( !defined('IN_MPHPBB31') )
 {
 	exit;
 }

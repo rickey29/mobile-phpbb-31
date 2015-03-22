@@ -1,0 +1,22 @@
+<!-- INCLUDE overall_header.html -->
+<li data-role="list-divider">{L_SEND_PASSWORD}</li>
+<li>
+<form action="{S_PROFILE_ACTION}" method="post" id="remind">
+<div data-role="fieldcontain">
+<label for="username">{L_USERNAME}{L_COLON}</label>
+<input type="text" name="username" id="username" size="25" placeholder="{L_USERNAME}" />
+</div>
+<div data-role="fieldcontain">
+<label for="email">{L_EMAIL_ADDRESS}{L_COLON}<br />{L_EMAIL_REMIND}</label>
+<input type="email" name="email" id="email" size="25" maxlength="100" placeholder="{L_EMAIL_ADDRESS}" />
+</div>
+<fieldset data-role="controlgroup">
+<input type="submit" name="submit" id="submit" value="{L_SUBMIT}" data-theme="a" />
+<input type="reset" value="{L_RESET}" name="reset" data-theme="a" />
+</fieldset>
+{S_HIDDEN_FIELDS}
+{S_FORM_TOKEN}
+</form>
+</li>
+</ul>
+<!-- INCLUDE overall_footer.html -->

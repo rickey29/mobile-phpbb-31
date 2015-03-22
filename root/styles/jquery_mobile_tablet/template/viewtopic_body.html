@@ -14,8 +14,10 @@
 </li>
 <!-- ENDIF -->
 <li data-role="list-divider">{TOPIC_TITLE}</li>
+<script src="./mobile/themes/jquery/mobile/scrollToHash.js"></script>
 <!-- BEGIN postrow -->
 <li>
+<div id="p{postrow.POST_ID}">
 <!-- IF postrow.S_POST_HIDDEN -->
 <div data-role="collapsible">
 <!-- IF postrow.S_POST_DELETED -->
@@ -54,6 +56,7 @@
 <!-- IF postrow.S_POST_HIDDEN -->
 </div>
 <!-- ENDIF -->
+</div>
 </li>
 <!-- END postrow -->
 </ul>
