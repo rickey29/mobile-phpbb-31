@@ -1,7 +1,7 @@
 Mobile phpBB 3.1 Readme
 ################
-version: 1.2.0
-last update: Sat., Mar. 21, 2015
+version: 1.3.0
+last update: Tue., Mar. 31, 2015
 
 
 Description
@@ -59,6 +59,9 @@ Since my often have to update this section after I release the package, so I pro
 
 History
 ++++++++++++++++
+version 1.3.0 (Tue., Mar. 31, 2015)
+-- new feature: support BBCode
+
 version 1.2.0 (Sat., Mar. 21, 2015)
 -- new feature: support hash url
 -- new feature: provide "captcha_qa" template

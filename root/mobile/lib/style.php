@@ -2,7 +2,7 @@
 /*
 	project: Mobile phpBB 3.1 (MphpBB31)
 	file:    $phpbb_root_path/mobile/lib/style.php
-	version: 1.2.0
+	version: 1.3.0
 	author:  Rickey Gu
 	web:     http://flexplat.com
 	email:   rickey29@gmail.com

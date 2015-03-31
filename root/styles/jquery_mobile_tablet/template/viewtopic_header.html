@@ -15,11 +15,17 @@
 <style type="text/css">
 img { max-width: 100%; height: auto; }
 </style>
+<link rel="stylesheet" href="./styles/jquery_mobile_tablet/theme/stylesheet.css" />
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+<link href="./styles/jquery_mobile_tablet/theme/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+<script src="./mobile/themes/jquery/mobile/scrollToHash.js"></script>
 </head>
 <body>
 <div data-role="page">
+<!-- INCLUDE panel_body.html -->
 <div data-role="header" data-position="fixed">
-<a href="{U_OPTIONS}" data-rel="dialog" data-icon="bars" data-transition="pop">{L_OPTIONS}</a>
+<a href="#m-panel" data-icon="bars" data-shadow="false" data-iconshadow="false">{L_OPTIONS}</a>
 <h1>{PAGE_TITLE}</h1>
 </div>
 <div data-role="content">
