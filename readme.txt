@@ -1,7 +1,7 @@
 Mobile phpBB 3.1 Readme
 ################
-version: 1.3.1
-last update: Wed., Apr. 01, 2015
+version: 2.0.0
+last update: Tue., Jan. 26, 2016
 
 
 Description
@@ -9,6 +9,8 @@ Description
 Mobile phpBB 3.1 (MphpBB31) is a mobile-friendly phpBB 3.1 theme.
 
 It only provides essential mobile related functions, it does not support all phpBB 3.1 features.
+
+For more information, please go to: http://flexplat.com/mobile-phpbb-31 .
 
 Please do NOT use this software when you are driving -- looking at mobile screen while driving is very dangerous.  If you are a webmaster, please forward this caution to your end users.
 
@@ -25,40 +27,39 @@ None.
 
 Infrastructure
 ++++++++++++++++
-This version is developed based on phpBB version 3.1.0 to 3.1.3 .
+This version is developed based on phpBB version 3.1.0 to 3.1.7-pl1 .
 
 
 Installation
 ++++++++++++++++
-Please refer to package "install.xml" file for detail.
+Please refer to package "install.txt" file for detail.
 
 
 Configuration
 ++++++++++++++++
 Personalize Page Header and Footer
 ================
-The following variables content within "language/en/common.php" will be displayed on the header of each mobile-friendly web page.  You can update these variables to show your web site logo and/or advertisement.
--- FEATURE_PHONE_PERSONAL_HEADER
--- JQUERY_MOBILE_SMARTPHONE_PERSONAL_HEADER
--- JQUERY_MOBILE_TABLET_PERSONAL_HEADER
+The following variable content within "ext/rickey29/mphpbb31/language/en/mphpbb31.php" will be displayed on the header of each mobile-friendly web page.  You can update this variable to show your web site logo and/or advertisement.
+-- PERSONAL_HEADER
 
-The following variables content within "language/en/common.php" will be displayed on the footer of mobile-friendly homepage.  You can update these variables to show your web site information.
--- FEATURE_PHONE_PERSONAL_FOOTER
--- JQUERY_MOBILE_SMARTPHONE_PERSONAL_FOOTER
--- JQUERY_MOBILE_TABLET_PERSONAL_FOOTER
+The following variable content within "ext/rickey29/mphpbb31/language/en/mphpbb31.php" will be displayed on the footer of mobile-friendly homepage.  You can update this variable to show your web site information.
+-- PERSONAL_FOOTER
 
-If you have other language(s) than English, please update your language file(s) as I do for "language/en/common.php".
+If you have other language(s) than English, please update your language file(s) as I do for "ext/rickey29/mphpbb31/language/en/mphpbb31.php".
 
 
 Frequent Ask Question
 ++++++++++++++++
 Please refer to my web site: "http://flexplat.com/mphpbb31-faq" for detail discussion.
 
-Since my often have to update this section after I release the package, so I provide the questions and answers on my web site instead of here.
+Since I often have to update this section after I release the package, so I provide the questions and answers on my web site instead of here.
 
 
 History
 ++++++++++++++++
+version 2.0.0 (Tue., Jan. 26, 2016)
+-- improvement: re-write based on 3.1 extension style
+
 version 1.3.1 (Wed., Apr. 01, 2015)
 -- bug fix: viewtopic_body Menu Option not working
 
@@ -91,4 +92,4 @@ email: rickey29@gmail.com
 
 Copyright and Disclaimer
 ++++++++++++++++
-This application is open-source software released under the GNU General Public License v2: http://opensource.org/licenses/gpl-2.0.php .
+This application is open-source software released under the GNU General Public License Version 2: "http://opensource.org/licenses/gpl-2.0.php".

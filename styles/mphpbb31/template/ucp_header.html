@@ -1,0 +1,18 @@
+<!-- INCLUDE overall_header.html -->
+<!-- IF S_PRIVMSGS -->
+<li>
+<div data-role="navbar">
+<ul>
+<!-- BEGIN folder -->
+<li>
+<!-- IF folder.S_CUR_FOLDER -->
+<a href="{folder.U_FOLDER}" rel="external"><!-- IF folder.UNREAD_MESSAGES > 0 -->{folder.FOLDER_NAME} ( {folder.UNREAD_MESSAGES} )<!-- ELSE -->{folder.FOLDER_NAME}<!-- ENDIF --></a>
+<!-- ELSE -->
+<a href="{folder.U_FOLDER}" rel="external" class="ui-btn-active"><!-- IF folder.UNREAD_MESSAGES > 0 -->{folder.FOLDER_NAME} ( {folder.UNREAD_MESSAGES} )<!-- ELSE -->{folder.FOLDER_NAME}<!-- ENDIF --></a>
+<!-- ENDIF -->
+</li>
+<!-- END folder -->
+</ul>
+</div>
+</li>
+<!-- ENDIF -->

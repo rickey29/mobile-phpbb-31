@@ -1,0 +1,17 @@
+services:
+    rickey29.mphpbb31.listener:
+        class: rickey29\mphpbb31\event\listener
+        arguments:
+            - @dbal.conn
+            - @request
+            - @user
+            - @config
+            - @template
+            - %core.root_path%
+            - %core.php_ext%
+            - @rickey29.mphpbb31.detection
+        tags:
+            - { name: event.listener }
+    rickey29.mphpbb31.detection:
+        class: rickey29\mphpbb31\event\lib\detection
+        arguments:

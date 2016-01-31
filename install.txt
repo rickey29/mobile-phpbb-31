@@ -1,0 +1,35 @@
+step 0:
+================
+Assume your phpBB 3.1 web site is located in: "http://yoursite.com".
+
+step 1:
+================
+Please backup your database.  This step is not mandatory for MphpBB31 installation.  However, it provides convenience when you want to restore the system in case of any unhappy.
+
+step 2:
+================
+Extract MphpBB31 zip package on your PC, you will get a "mphpbb31" directory.
+
+step 3:
+================
+Upload following directories from the "mphpbb31" directory to your web site:
+-- ext/rickey29
+-- styles/mphpbb31
+
+step 4:
+================
+If you have other language(s) than English, please update your language file(s) as I do for "ext/rickey29/mphpbb31/language/en/mphpbb31.php".
+
+step 5:
+================
+Go to phpBB 3.1 "Administration Control Panel", select "Customise", then:
+-- choice "Install Styles", install "Mobile phpBB 3.1" style,
+-- choice "Manage extensions", enable "Mobile phpBB 3.1" extension.
+
+step 6:
+================
+Set up a sub-domain, such as: "http://m.yoursite.com", which redirects to "http://yoursite.com/?m-redirection=mobile".
+
+step 14:
+================
+End users can now get mobile-friendly style of your phpBB 3.1 from their mobile web browsers through "http://m.yoursite.com".

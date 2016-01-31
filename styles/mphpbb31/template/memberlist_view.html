@@ -1,0 +1,95 @@
+<!-- INCLUDE overall_header.html -->
+<li data-role="list-divider">{PAGE_TITLE}</li>
+<li>
+{L_USERNAME}{L_COLON} {USERNAME}
+</li>
+<!-- IF RANK_TITLE -->
+<li>
+{L_RANK}{L_COLON} {RANK_TITLE}
+</li>
+<!-- ENDIF -->
+<!-- IF S_USER_INACTIVE -->
+<li>
+{L_USER_IS_INACTIVE}{L_COLON} {USER_INACTIVE_REASON}
+</li>
+<!-- ENDIF -->
+<!-- IF AGE !== '' -->
+<li>
+{L_AGE}{L_COLON} {AGE}
+</li>
+<!-- ENDIF -->
+<li data-role="list-divider">{L_CONTACT_USER}</li>
+<!-- IF U_EMAIL -->
+<li>
+<a href="{U_EMAIL}" rel="external">{L_EMAIL_ADDRESS}{L_COLON} {L_SEND_EMAIL_USER}</a>
+</li>
+<!-- ENDIF -->
+<!-- IF U_PM -->
+<li>
+<a href="{U_PM}" rel="external">{L_PM}{L_COLON} {L_SEND_PRIVATE_MESSAGE}</a>
+</li>
+<!-- ENDIF -->
+<!-- IF U_JABBER and S_JABBER_ENABLED -->
+<li>
+<a href="{U_JABBER}" rel="external">{L_JABBER}{L_COLON} {L_SEND_JABBER_MESSAGE}</a>
+</li>
+<!-- ELSEIF USER_JABBER -->
+<li>
+{L_JABBER}{L_COLON} {USER_JABBER}
+</li>
+<!-- ENDIF -->
+<li data-role="list-divider">{L_USER_FORUM}</li>
+<li>
+{L_JOINED}{L_COLON} {JOINED}
+</li>
+<li>
+{L_LAST_ACTIVE}{L_COLON} {LAST_ACTIVE}
+</li>
+<!-- IF S_WARNINGS -->
+<li>
+{L_WARNINGS}{L_COLON} {WARNINGS}
+</li>
+<!-- ENDIF -->
+<li>
+<h3>{L_TOTAL_POSTS}{L_COLON} {POSTS}</h3>
+<p>
+<!-- IF POSTS_PCT -->
+( {POSTS_PCT} / {POSTS_DAY} )
+<!-- ENDIF -->
+<!-- IF POSTS_IN_QUEUE and U_MCP_QUEUE -->
+<br />
+( {L_POSTS_IN_QUEUE} )
+<!-- ELSEIF POSTS_IN_QUEUE -->
+<br />
+( {L_POSTS_IN_QUEUE} )
+<!-- ENDIF -->
+</p>
+</li>
+<!-- IF S_SHOW_ACTIVITY and POSTS -->
+<li>
+<!-- IF ACTIVE_FORUM != '' -->
+<a href="{U_ACTIVE_FORUM}" rel="external">
+<h3>{L_ACTIVE_IN_FORUM}{L_COLON} {ACTIVE_FORUM}</h3>
+<p>
+( {ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT} )
+</p>
+</a>
+<!-- ELSE -->
+<h3>{L_ACTIVE_IN_FORUM}{L_COLON} - </h3>
+<!-- ENDIF -->
+</li>
+<li>
+<!-- IF ACTIVE_TOPIC != '' -->
+<a href="{U_ACTIVE_TOPIC}" rel="external">
+<h3>{L_ACTIVE_IN_TOPIC}{L_COLON} {ACTIVE_TOPIC}</h3>
+<p>
+( {ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT} )
+</p>
+</a>
+<!-- ELSE -->
+<h3>{L_ACTIVE_IN_TOPIC}{L_COLON} - </h3>
+<!-- ENDIF -->
+</li>
+<!-- ENDIF -->
+</ul>
+<!-- INCLUDE overall_footer.html -->

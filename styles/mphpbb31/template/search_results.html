@@ -1,0 +1,29 @@
+<!-- INCLUDE overall_header.html -->
+<li data-role="list-divider"><!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF --></li>
+<!-- IF S_SHOW_TOPICS -->
+<!-- IF .searchresults -->
+<!-- BEGIN searchresults -->
+<li>
+<a href="{searchresults.U_VIEW_TOPIC}" rel="external">
+<h3>{searchresults.TOPIC_TITLE}</h3>
+<p>{L_POST_BY_AUTHOR} {searchresults.TOPIC_AUTHOR} &raquo; {searchresults.FIRST_POST_TIME} &raquo; {L_IN} {searchresults.FORUM_TITLE}</p>
+<span class="ui-li-count">{searchresults.TOPIC_REPLIES} &#47; {searchresults.TOPIC_VIEWS}</span>
+</a>
+<!-- IF not S_IS_BOT -->
+<a href="{searchresults.U_LAST_POST}" rel="external" data-transition="slideup"></a>
+<!-- ENDIF -->
+</li>
+<!-- END searchresults -->
+<!-- ELSE -->
+<li>{L_NO_SEARCH_RESULTS}</li>
+<!-- ENDIF -->
+<!-- ELSE -->
+<!-- ENDIF -->
+</ul>
+<!-- IF .pagination or .searchresults or PAGE_NUMBER -->
+<!-- IF .pagination -->
+<!-- INCLUDE pagination.html -->
+<!-- ELSE -->
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,68 @@
+<!-- INCLUDE viewtopic_header.html -->
+<!-- IF ( not S_IS_BOT and S_DISPLAY_REPLY_INFO ) or ( ( .pagination or TOTAL_POSTS ) and ( U_VIEW_UNREAD_POST and not S_IS_BOT ) ) -->
+<li>
+<div>
+<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
+<a href="{U_POST_REPLY_TOPIC}" rel="external" data-role="button" data-inline="true" data-theme="b"><!-- IF S_IS_LOCKED -->{L_BUTTON_TOPIC_LOCKED}<!-- ELSE -->{L_BUTTON_POST_REPLY}<!-- ENDIF --></a>
+<!-- ENDIF -->
+<!-- IF .pagination or TOTAL_POSTS -->
+<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT -->
+<a href="{U_VIEW_UNREAD_POST}" rel="external" data-role="button" data-inline="true" data-theme="b">{L_VIEW_UNREAD_POST}</a>
+<!-- ENDIF -->
+<!-- ENDIF -->
+</div>
+</li>
+<!-- ENDIF -->
+<li data-role="list-divider">{TOPIC_TITLE}</li>
+<!-- BEGIN postrow -->
+<li>
+<div id="p{postrow.POST_ID}">
+<!-- IF postrow.S_POST_HIDDEN -->
+<div data-role="collapsible">
+<!-- IF postrow.S_POST_DELETED -->
+<h4>{postrow.L_POST_DELETED_MESSAGE}</h4>
+<!-- ELSEIF postrow.S_IGNORE_POST -->
+<h4>{postrow.L_IGNORE_POST}</h4>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF not S_IS_BOT -->
+<!-- IF postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE -->
+<div>
+<!-- IF postrow.U_EDIT -->
+<a href="{postrow.U_EDIT}" rel="external" data-role="button" data-inline="true" data-theme="b">{L_BUTTON_EDIT}</a>
+<!-- ENDIF -->
+<!-- IF postrow.U_DELETE -->
+<a href="{postrow.U_DELETE}" rel="external" data-role="button" data-inline="true" data-theme="b">{L_DELETE_POST}</a>
+<!-- ENDIF -->
+<!-- IF postrow.U_REPORT -->
+<a href="{postrow.U_REPORT}" rel="external" data-role="button" data-inline="true" data-theme="b">{L_REPORT_POST}</a>
+<!-- ENDIF -->
+<!-- IF postrow.U_QUOTE -->
+<a href="{postrow.U_QUOTE}" rel="external" data-role="button" data-inline="true" data-theme="b">{L_QUOTE}</a>
+<!-- ENDIF -->
+</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<h3>{postrow.POST_SUBJECT}</h3>
+<!-- IF postrow.U_POST_AUTHOR -->
+<p>{L_POST_BY_AUTHOR} <a href="{postrow.U_POST_AUTHOR}" rel="external">{postrow.POST_AUTHOR}</a> &raquo; {postrow.POST_DATE}</p>
+<!-- ELSE -->
+<p>{L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR}</strong> &raquo; {postrow.POST_DATE}</p>
+<!-- ENDIF -->
+<div>
+{postrow.MESSAGE}
+</div>
+<!-- IF postrow.S_POST_HIDDEN -->
+</div>
+<!-- ENDIF -->
+</div>
+</li>
+<!-- END postrow -->
+</ul>
+<!-- IF .pagination or TOTAL_POSTS -->
+<!-- IF .pagination -->
+<!-- INCLUDE pagination.html -->
+<!-- ELSE -->
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

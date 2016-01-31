@@ -1,0 +1,30 @@
+<!-- BEGIN forumrow -->
+<!-- IF forumrow.S_IS_CAT or forumrow.S_FIRST_ROW or forumrow.S_NO_CAT -->
+<!-- IF forumrow.S_IS_CAT -->
+<li data-role="list-divider">{forumrow.FORUM_NAME}</li>
+<!-- ELSE -->
+<li data-role="list-divider">{L_FORUM}</li>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF not forumrow.S_IS_CAT -->
+<li>
+<a href="{forumrow.U_VIEWFORUM}" rel="external">
+<h3>{forumrow.FORUM_NAME}</h3>
+<!-- IF forumrow.FORUM_DESC -->
+<p>{forumrow.FORUM_DESC}</p>
+<!-- ENDIF -->
+<span class="ui-li-count">{forumrow.TOPICS} / {forumrow.POSTS}</span>
+</a>
+<!-- IF forumrow.CLICKS -->
+<!-- ELSEIF not forumrow.S_IS_LINK -->
+<!-- IF forumrow.LAST_POST_TIME -->
+<a href="{forumrow.U_LAST_POST}" rel="external" data-transition="slideup"></a>
+<!-- ELSE -->
+<!-- ENDIF -->
+<!-- ELSE -->
+<!-- ENDIF -->
+</li>
+<!-- ENDIF -->
+<!-- BEGINELSE -->
+<li>{L_NO_FORUMS}</li>
+<!-- END forumrow -->

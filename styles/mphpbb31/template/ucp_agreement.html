@@ -1,0 +1,44 @@
+<!-- INCLUDE overall_header.html -->
+<!-- IF S_SHOW_COPPA or S_REGISTRATION -->
+<li data-role="list-divider">{L_REGISTRATION}</li>
+<li>
+<div>
+<!-- IF S_SHOW_COPPA -->
+{L_COPPA_BIRTHDAY}
+<!-- ELSE -->
+{L_TERMS_OF_USE}
+<!-- ENDIF -->
+</div>
+</li>
+<li>
+<!-- IF S_SHOW_COPPA -->
+<div>
+<a href="{U_COPPA_NO}" rel="external" data-role="button" data-theme="a">{L_COPPA_NO}</a>
+<a href="{U_COPPA_YES}" rel="external" data-role="button" data-theme="a">{L_COPPA_YES}</a>
+</div>
+<!-- ELSE -->
+<form method="post" action="{S_UCP_ACTION}" id="agreement">
+<fieldset data-role="controlgroup">
+<input type="submit" name="agreed" id="agreed" value="{L_AGREE}" data-theme="a" />
+<input type="submit" name="not_agreed" value="{L_NOT_AGREE}" data-theme="a" />
+</fieldset>
+{S_HIDDEN_FIELDS}
+{S_FORM_TOKEN}
+</form>
+<!-- ENDIF -->
+</li>
+<!-- ELSEIF S_AGREEMENT -->
+<li data-role="list-divider">{AGREEMENT_TITLE}</li>
+<li>
+<div>
+{AGREEMENT_TEXT}
+</div>
+</li>
+<li>
+<div>
+<a href="{U_BACK}" rel="external" data-role="button" data-theme="a">{L_BACK}</a>
+</div>
+</li>
+<!-- ENDIF -->
+</ul>
+<!-- INCLUDE overall_footer.html -->

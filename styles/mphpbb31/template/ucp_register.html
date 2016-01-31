@@ -1,0 +1,53 @@
+<!-- INCLUDE overall_header.html -->
+<li data-role="list-divider">{L_REGISTRATION}</li>
+<!-- IF ERROR -->
+<li data-theme="e">{ERROR}</li>
+<!-- ENDIF -->
+<!-- IF L_REG_COND -->
+<li>{L_REG_COND}</li>
+<!-- ENDIF -->
+<li>
+<form method="post" action="{S_UCP_ACTION}" id="register">
+<div data-role="fieldcontain">
+<label for="username">{L_USERNAME}{L_COLON}<br />{L_USERNAME_EXPLAIN}</label>
+<input type="text" name="username" id="username" size="25" value="{USERNAME}" placeholder="{L_USERNAME}" />
+</div>
+<div data-role="fieldcontain">
+<label for="email">{L_EMAIL_ADDRESS}{L_COLON}</label>
+<input type="email" name="email" id="email" size="25" maxlength="100" value="{EMAIL}" placeholder="{L_EMAIL_ADDRESS}" />
+</div>
+<div data-role="fieldcontain">
+<label for="new_password">{L_PASSWORD}{L_COLON}<br />{L_PASSWORD_EXPLAIN}</label>
+<input type="password" name="new_password" id="new_password" size="25" value="{PASSWORD}" placeholder="{L_PASSWORD}" />
+</div>
+<div data-role="fieldcontain">
+<label for="password_confirm">{L_CONFIRM_PASSWORD}{L_COLON}</label>
+<input type="password" name="password_confirm" id="password_confirm" size="25" value="{PASSWORD_CONFIRM}" placeholder="{L_CONFIRM_PASSWORD}" />
+</div>
+<div data-role="fieldcontain">
+<label for="lang" class="select">{L_LANGUAGE}{L_COLON}</label>
+<select name="lang" id="lang" data-native-menu="false">
+{S_LANG_OPTIONS}
+</select>
+</div>
+<!-- INCLUDE timezone_option.html -->
+<!-- IF CAPTCHA_TEMPLATE -->
+<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
+<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+<!-- ENDIF -->
+<fieldset data-role="controlgroup">
+<input type="reset" value="{L_RESET}" name="reset" data-theme="a" />
+<input type="submit" name="submit" id="submit" value="{L_SUBMIT}" data-theme="a" />
+</fieldset>
+{S_HIDDEN_FIELDS}
+{S_FORM_TOKEN}
+</form>
+</li>
+<!-- IF S_COPPA -->
+<li>
+<h3>{L_COPPA_COMPLIANCE}</h3>
+{L_COPPA_EXPLAIN}
+</li>
+<!-- ENDIF -->
+</ul>
+<!-- INCLUDE overall_footer.html -->
